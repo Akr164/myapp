@@ -1,7 +1,7 @@
 import pandas as pd
 from flask import Flask, render_template, request
 import pickle
-import numpy as np
+
 
 app = Flask(__name__)
 
@@ -24,7 +24,7 @@ def predict():
     
     prediction = pipe.predict(input_df)[0] * 1e5
     
-    return str('Only ₹')+str(np.round(prediction, 2))
+    return str('Only ₹')+str(prediction)
 
 if __name__ == "__main__":
     app.run(debug=True)
