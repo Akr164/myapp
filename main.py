@@ -6,7 +6,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-data = pd.read_csv(r'D:\\data_science_course\\Bengaluru house price prediction\\Cleaned_data.csv')
+data = pd.read_csv('Cleaned_data.csv')
 pipe = pickle.load(open('regressionModel.pkl','rb'))
 
 @app.route('/')
